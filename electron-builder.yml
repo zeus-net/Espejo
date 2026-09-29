@@ -1,0 +1,34 @@
+appId: com.espejo.vncviewer
+productName: Espejo
+directories:
+  output: dist
+files:
+  - out/**/*
+  - build/**/*
+  - package.json
+extraResources:
+  - from: build/icon.png
+    to: icon.png
+  - from: build/espejo-config.json
+    to: espejo-config.json
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: msi
+      arch:
+        - x64
+  icon: build/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Espejo
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+msi:
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Espejo
